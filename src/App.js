@@ -30,7 +30,7 @@ export default withStateHandlers(
       const checks = map(answer => {
         if (board[answer[0]] === turn && board[answer[1]] === turn && board[answer[2]] === turn ) {
           console.log("winner");
-          return (1)
+          return ({gameEnded: true})
         }
       }, answers);
       console.log(checks);
@@ -38,7 +38,7 @@ export default withStateHandlers(
       const filtered = filter(e => e !== undefined, checks);
       console.log(filtered);
 
-      return (filtered[0] === 1 ? {gameEnded: true} : {gameEnded: false});
+      return (filtered[0])
     },
     clicked: () => (e, turn, board, checkWinner, test) => {
       console.log(test);
