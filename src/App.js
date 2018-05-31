@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withStateHandlers } from 'recompose';
 import { map , times , filter } from 'ramda'
-import Popup from 'react-popup';
 import './App.css';
 
 const App = ({ isOpen, turn, clicked, board, checkWinner, gameEnded }) => {
@@ -26,7 +25,6 @@ export default withStateHandlers(
   },
   {
     checkWinner: () => (board, turn) => {
-      // console.log("coucou");
       const answers = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
 
       const checks = map(answer => {
@@ -40,8 +38,7 @@ export default withStateHandlers(
       const filtered = filter(e => e !== undefined, checks);
       console.log(filtered);
 
-      return (filtered[0] === 1 ? {gameEnded: true} : {gameEnded: false})
-
+      return (filtered[0] === 1 ? {gameEnded: true} : {gameEnded: false});
     },
     clicked: () => (e, turn, board, checkWinner, test) => {
       console.log(test);

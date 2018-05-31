@@ -5,6 +5,7 @@
 }
 
 #game {
+  width:100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,8 +13,13 @@
 }
 
 #head {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   font-size: 35px;
-  margin: 20px;
+  padding: 20px;
+  background-color: yellow;
+  color: red;
 }
 
 #board {
