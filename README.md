@@ -1,2 +1,1 @@
-# redtetris
 # RedTicTacToe
